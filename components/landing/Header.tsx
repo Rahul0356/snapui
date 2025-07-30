@@ -1,4 +1,9 @@
 import React from 'react'
+import Link from "next/link";
+import { Flame } from 'lucide-react';
+
+import {Link as ViewTransitionsLink} from "next-view-transitions";
+import { Badge } from "@/components/ui/badge";
 
 const Header = () => {
   return (
@@ -24,6 +29,46 @@ const Header = () => {
                             transition-all duration-300 ease-in-out
                         `}
         >
+          <div className="relative z-10 flex items-center justify-between w-full gap-2">
+            { /* logo section */}
+           <div className="flex items-center gap-6">
+                  <Link href="/" className="flex items-center gap-2">
+                   <Flame className="w-6 h-6 text-green-500 dark:text-green-400" />
+                   
+                    <span className="hidden sm:block font-semibold">
+                      SnapUI
+                    </span>
+                  </Link>
+                  <span className='text-zinc-300 dark:text-zinc-700'>|</span>
+                  {/* Desktop navigation */}
+                  <div className="hidden sm:flex items-center gap-4">
+                    <ViewTransitionsLink
+                      href="/docs/components/background-paths"
+                      className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+                    >
+                      Components
+                    </ViewTransitionsLink>
+                     <ViewTransitionsLink
+                                            href="/pricing"
+                                            className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+                                        >
+                                            Pricing
+                                        </ViewTransitionsLink> 
+                                        <Link
+                                        href={"#"}
+                                        target="_blank"
+                                        className='text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 *:dark:hover:text-zinc-100 transition-colors flex items-center gap-2'
+                                        >
+                                         Templates 
+                                        <Badge variant="brand">
+                                          new
+                                        </Badge>
+
+                                        </Link>
+                  </div>
+            </div>
+            {/* Rightsedi items */ }
+          </div>
             
         </div>
     </div>
