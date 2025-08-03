@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextarea } from "@/hooks/use-auto-reseize-textarea";
 
 export default function AIInput_04() {
     const [value, setValue] = useState("");
